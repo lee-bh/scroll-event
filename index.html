@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>스크롤이벤트</title>
+	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+	<style>
+
+		@font-face {
+    font-family: 'Eulyoo1945-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/Eulyoo1945-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+		body{margin:0;}
+		#container{ font-size: 100px; font-family: 'Eulyoo1945-SemiBold', sans-serif; transition: all 1s; line-height: 1.5;}
+		#monitor{width:100px; height:40px; background: green; position: fixed; color: white; text-align: center; line-height: 40px;
+			right:0;}
+		#bloom{position: absolute; top:2400px; left:700px; width:300px;z-index:9999;animation:rotate 1s linear infinite paused;}
+		@keyframes rotate{
+			from{transform: rotate(0deg)}
+			to{transform: rotate(360deg)}
+		}
+	</style>
+</head>
+<body>
+<div id="monitor"></div>
+<img src="bloom.png" id="bloom">
+<div id="container">
+<br>
+	나는 가끔 후회한다 <br>
+	그때 그일이 <br>
+	노다지였을지도 모르는데… <br><br>
+	그때 그 사람이 <br>
+	그때 그 물건이 <br>
+	노다지였을지도 모르는데… <br><br>
+	더 열심히 파고들고 <br>
+	더 열심히 말을 걸고<br> 
+	더 열심히 귀 기울이고<br> 
+	더 열심히 사랑할 걸… <br>
+<br>
+	반벙어리처럼 <br>
+	귀머거리처럼 <br>
+	보내지는 않았는가<br> 
+	우두커니처럼… <br>
+	더 열심히 그 순간을 <br>
+	사랑할 것을… <br>
+
+	모든 순간이 다아 <br>
+	꽃봉오리인 것을, <br>
+	내 열심에 따라 피어날<br> 
+	꽃봉오리인 것을!<br><br>
+	모든 순간이 꽃봉오리인 것을<br>
+<br>
+	정현종<br>
+<br>
+	나는 가끔 후회한다 <br>
+	그때 그일이 <br>
+	노다지였을지도 모르는데… <br><br>
+	그때 그 사람이 <br>
+	그때 그 물건이 <br>
+	노다지였을지도 모르는데… <br><br>
+	더 열심히 파고들고 <br>
+	더 열심히 말을 걸고<br> 
+	더 열심히 귀 기울이고<br> 
+	더 열심히 사랑할 걸… <br>
+<br>
+	반벙어리처럼 <br>
+	귀머거리처럼 <br>
+	보내지는 않았는가<br> 
+	우두커니처럼… <br>
+	더 열심히 그 순간을 <br>
+	사랑할 것을… <br>
+
+	모든 순간이 다아 <br>
+	꽃봉오리인 것을, <br>
+	내 열심에 따라 피어날<br> 
+	꽃봉오리인 것을!<br><br>
+	모든 순간이 꽃봉오리인 것을<br>
+<br>
+	정현종<br>
+
+</div>
+
+<script type="text/javascript">
+	window.onscroll = function(){
+		console.log(document.documentElement.scrollTop, document.body.scrollTop);
+
+		//스크롤 값이 브라우저에 따라 두 가지가 존재하고 둘 중에 하나만 값을 가지기 때문에
+		//모든 브라우저에서 작동할 수 있도록 아래 두 값을 더합니다.
+		
+		var t = document.documentElement.scrollTop + document.body.scrollTop;
+		monitor.innerHTML = t + "px";
+		if(t < 500){
+			container.style.background = "red";
+		}else if(t < 1500){
+			container.style.background = "orange";
+		}else if(t < 2500){
+			container.style.background = "yellow";
+		}else if(t < 3500){
+			container.style.background = "green";
+		}else if(t < 4500){
+			container.style.background = "blue";
+		}else if(t < 5500){
+			container.style.background = "navy";
+		}else{
+			container.style.background = "purple";
+		}
+
+		if(t > 2050 && t < 2500){ 
+			bloom.style.animationPlayState = "running";
+		}else{
+			bloom.style.animationPlayState = "paused";
+		}
+	}
+
+	
+	//스크롤 예제
+	//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_svg_scrolldrawing
+</script>
+</body>
+</html>
+
+
+
+
